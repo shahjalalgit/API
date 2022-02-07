@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <h1>Java Script Object Notation</h1>
+    <script>
+        const user = {
+            id: 245, 
+            name: "Swapnil",
+            lover: {
+                name: "Neelima",
+                F_color: "Black"
+            },
+            friendAge: [22,28,30],
+            friends: ["Kamal", "Jamal", "Rahim"]
+        };
+        const userToJSON = JSON.stringify(user);
+        console.log(userToJSON);
+        // when we pass data to API
+
+        const userFromJSON = JSON.parse(userToJSON);
+        console.log(userFromJSON);
+        // it is used when we received data from API
+    </script>
+    
+</body>
+</html>

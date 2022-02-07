@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JESON Placeholder</title>
+</head>
+<body>
+    <h1>JSON</h1> 
+    <h1>Java Script Object Notation</h1>
+    <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a>
+    <p>Here, we learn how to load data from server and access those data in website</p>
+    <p>important link for GET vs POST: <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">Click</a></p>
+    <ul id="users-container"></ul>
+    <script>
+        // HTTP GET request
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(json => displayUsers(json))
+
+        function displayUsers(users){
+            // constructing only users name from users information by using map() or loop
+            //using map()
+            const userName = users.map( user => user.username )
+            //console.log(userName);
+            //Now show this names of user in this html code.
+            const ul = document.getElementById("users-container");
+            for(let i = 0; i < userName.length; i++){
+                li = document.createElement("li");
+                li.innerText = userName[i];
+                ul.appendChild(li);
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
